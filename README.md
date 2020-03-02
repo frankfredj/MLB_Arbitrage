@@ -24,9 +24,11 @@ Averaging player statistics produce strong autocorrelations. Given the weights u
 ![](https://i.imgur.com/NsZtR1G.png)
 ![](https://i.imgur.com/KWBUEtY.png)
 
-To combat this, the data will be sorted by date then split into 10 folds. Each fold will contain one serie of games number {j, j + 10, ... , j + 10n} per team. This will segment the data in a way such that no decaying average have aggregated points in common.
-
 # Variable selection
+The data will be sorted by date then split into 8 folds. Each fold will contain one serie of home game number {j, j + 8, ... , j + 8n} per team. This will segment the data in a way such that no decaying average have aggregated points in common. Each fold will be processed in the same way:
+* Run our ensemble of models.
+* Keep track of variable importance for each model.
+* Store the results in a grid
 
 
 
