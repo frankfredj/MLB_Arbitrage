@@ -53,6 +53,16 @@ Since features are pair-wise (i.e.: *x_home*, *x_away*), we fuse pairs together 
 ![](https://i.imgur.com/zuA1rJ3.png)
 ![](https://i.imgur.com/lCI7jsN.png)
 
+We will treat the number of hits as a Binomial random variable with a Gamma prior (α = β = 1), which will result in a Beta Binomial posterior predictive. The alphas used for each model when selecting variables with respect to their posterior predictive's p-values are:
+
+* glmnet: 0.1
+* ranger: 0.25
+* xgboost (linear and tree): 0.05
+
+The union of the 4 sets of retained features will be used to train a neural network as our 5th model.
+
+
+
 
  
  
