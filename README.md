@@ -59,7 +59,17 @@ We will treat the number of hits as a Binomial random variable with a Gamma prio
 * ranger: 0.25
 * xgboost (linear and tree): 0.05
 
-The union of the 4 sets of retained features will be used to train a neural network as our 5th model.
+The union of the 4 sets of retained features will be used to train a neural network as our 5th model. The number of retained predictors for each model is:
+
+* glmnet: 48
+* ranger: 22
+* xgboost linear: 72 
+* xgboost tree: 76
+* neural network: 116
+
+# Parameters tuning
+
+The glmnet, ranger and xgboost models are tuned with the package mlrMBO. The chosen objective function to be maximised is the AUROC. 
 
 
 
