@@ -99,7 +99,10 @@ The ensemble model's out-of-fold predictions were column-merged with their assoc
 (Note that the moneyline odds are refered to as *Book* in the following section.)
 
 ![](https://i.imgur.com/Hcc3ZsH.png)
+
 ![](https://i.imgur.com/DWAJzhp.png)
+
+
 
 
 
