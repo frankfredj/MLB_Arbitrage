@@ -69,12 +69,12 @@ The union of the 4 sets of retained features will be used to train a neural netw
 
 # Parameters tuning
 
-The glmnet, ranger and xgboost models are tuned with the package mlrMBO. The chosen objective function to be maximised is the AUROC. 
+The xgboost and glmnet models are tuned with the package mlrMBO, whereas a random grid is used for ranger. In all cases, the chosen objective function to be maximised is the AUROC. 
 
+All hyperparameters, including the neural network, were tuned using the most recent 6063 matches as out-of-fold validation data. Usual cross-validation cannot be used here, as there is unreasonable autocorrelations between successive matches by the same team. Moreoever, we need to validate our model using testing data that temporally supercedes the training set.
 
+Once the tuning is done, mlrMBO is used once again to build a weighted average ensemble model using all but the most recent 2430 matches from the out-of-fold validation set. (I.e.: find the the set of non-negative weights maximizing the AUROC).
 
-
- 
  
 
 
