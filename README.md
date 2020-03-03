@@ -102,7 +102,9 @@ The ensemble model's out-of-fold predictions were column-merged with their assoc
 
 ![](https://i.imgur.com/DWAJzhp.png)
 
+(Right: Model, left: book)
 
+![](https://i.imgur.com/4YN8KSw.png)
 
 
 
