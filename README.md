@@ -46,34 +46,50 @@ The *importance* setting of the ranger package was set to "permutation". We disc
  ## Weeding-out retained features
 If a variable is genuinely important, then we expect it to be consistently selected by the procedures described above. The odds of being retained can be estimated from a grid made up of Bernoulli random variables with **n** = number of features (624) and **m** = number of folds (10). 
 
-Since features are pair-wise (i.e.: *x_home*, *x_away*), we fuse pairs together to produce a **n/2 x 2m** grid instead. Rows that sum up to zero are the discarded. Histograms for the number of times either member of the pair (*x_home*, *x_away*) was selected are displayed below.
+Since features are pair-wise (i.e.: *x_home*, *x_away*), we fuse pairs together to produce a **n/2 x 2m** grid instead. Rows that sum up to zero are then discarded. Histograms for the number of times either member of the pair (*x_home*, *x_away*) was selected are displayed below.
 
 ![](https://i.imgur.com/HXvrQSy.png)
 ![](https://i.imgur.com/bRkkAY4.png)
 ![](https://i.imgur.com/zuA1rJ3.png)
 ![](https://i.imgur.com/lCI7jsN.png)
 
-We will treat the number of hits as a Binomial random variable with a Gamma prior (α = β = 1), which will result in a Beta Binomial posterior predictive. The alphas used for each model when selecting variables with respect to their posterior predictive's p-values are:
+We will treat the quantity **number of hits - 1** as a Binomial random variable with parameters **N = 2m - 1** and **P having a Gamma prior with parameters (α = β = 1)**, which will result in a Beta Binomial posterior predictive. Said Beta Binomial distribution can be used to approximate P(X >= x<sub>j</sub> | x<sub>1</sub> ... x<sub>j-1</sub>, x<sub>j+1</sub>, ... x<sub>n</sub>), which we will take as x<sub>j</sub>'s p-value given the sample it originated from. 
 
-* glmnet: 0.1
-* ranger: 0.25
-* xgboost (linear and tree): 0.05
+The alphas used for each model when selecting variables with respect to their posterior predictive's p-values are:
+
+* glmnet: α = 0.1
+* ranger: α = 0.25
+* xgboost (linear and tree): α = 0.05
 
 The union of the 4 sets of retained features will be used to train a neural network as our 5th model. The number of retained predictors for each model is:
 
-* glmnet: 48
-* ranger: 22
-* xgboost linear: 72 
-* xgboost tree: 76
-* neural network: 116
+* glmnet: m = 48
+* ranger: m = 22
+* xgboost linear: m = 72 
+* xgboost tree: m = 76
+* neural network: m = 116
 
-# Parameters tuning
+# Model fitting
+
+## Hyperparameters tuning
 
 The xgboost and glmnet models are tuned with the package mlrMBO, whereas a random grid is used for ranger. In all cases, the chosen objective function to be maximised is the AUROC. 
 
 All hyperparameters, including the neural network, were tuned using the most recent 6063 matches as out-of-fold validation data. Usual cross-validation cannot be used here, as there is unreasonable autocorrelations between successive matches by the same team. Moreoever, we need to validate our model using testing data that temporally supercedes the training set.
 
-Once the tuning is done, mlrMBO is used once again to build a weighted average ensemble model using all but the most recent 2430 matches from the out-of-fold validation set. (I.e.: find the the set of non-negative weights maximizing the AUROC).
+The achieved AUROC per models with optimal tuning were:
+
+![](https://i.imgur.com/MXS8fAJ.png)
+
+
+
+## Meta-Model
+
+Once the tuning is done, mlrMBO is used once again to build a weighted average ensemble model using all but the most recent 2430 matches from the out-of-fold validation set. (I.e.: find the set of non-negative weights which maximizes the AUROC). The following weights were produced, with an associated out-of-fold AUROC of 0.8208:
+
+![](https://i.imgur.com/yqQKwIO.png)
+
+
 
  
 
