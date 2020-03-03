@@ -106,6 +106,13 @@ A quick summary of both models' respective performances is given below. (Note th
 
 ![](https://i.imgur.com/4YN8KSw.png)
 
+## Betting
+
+Consider two estimators of the true probability **f(x)**, which we will denote **g(x)** and **h(x)**. If **h(x)** is used to fix the returns on a bet, whereas **g(x)** is used as the estimator of **f(x)**, then the expected returns are:
+
+![](https://i.imgur.com/kIhRAZH.png)
+
+The first part of the integral denotes the true positive rate given the value of the estimator **g(x)** multiplied by the return offered, over the domain where **g(x)** > **h(x)**. The second part is analogous to the first one, but betting on the predicted losing team when **g(x)** < **h(x)**, hence why the true negative is used instead.
 
 
 
