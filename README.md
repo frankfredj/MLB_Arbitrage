@@ -90,6 +90,22 @@ Once the tuning is done, mlrMBO is used once again to build a weighted average e
 ![](https://i.imgur.com/yqQKwIO.png)
 
 
+# Backtesting
+
+The ensemble model's out-of-fold predictions were column-merged with their associated scores and moneylines in order to simulate one full MLB season betting run, as well as to compare the model's performance versus the odds suggested by the moneylines. Of the 2430 matches, 2309 had avaible moneylines to scrape and hence this will be the sample size of the final testing set.
+
+## Model comparison
+
+(Note that the moneyline odds are refered to as *Book* in the following section.)
+
+![](https://i.imgur.com/Hcc3ZsH.png)
+![](https://i.imgur.com/DWAJzhp.png)
+
+
+
+
+
+
 
  
 
