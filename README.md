@@ -119,6 +119,11 @@ More careful strategies produce higher Sharpe ratio, at the expense of having le
 
 ![](https://i.imgur.com/mrmU9Fp.png)
 
+## Distribution of the returns
+
+Under our estimator p̂(x), we have:
+![](https://i.imgur.com/osPfz6b.png)
+
 
 
 
