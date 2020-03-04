@@ -115,6 +115,10 @@ Consider our estimator p̂(x) alongside the offered returns R<sub>h</sub>(x) and
 ![](https://i.imgur.com/1hlxw1O.png)
 ![](https://i.imgur.com/pdxJ3j0.png)
 
+More careful strategies produce higher Sharpe ratio, at the expense of having less betting opportunities. A graph of the optimal statistics with respect to the miminum proportion of bets placed is given below.
+
+![](https://i.imgur.com/yPAvzTM.png)
+
 
 
 
