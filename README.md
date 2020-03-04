@@ -108,13 +108,12 @@ A quick summary of both models' respective performances is given below. (Note th
 
 ## Betting
 
-Consider two estimators of the true probability **f(x)**, which we will denote **g(x)** and **h(x)**. If **h(x)** is used to fix the returns on a bet, whereas **g(x)** is used as the estimator of **f(x)**, then the expected returns are:
+Consider our estimator p̂(x) alongside the offered returns R<sub>h</sub>(x) and R<sub>a</sub>(x). Our estimate for fair returns are the reciprocal of p̂(x) and 1 - p̂(x), which can in turn be used to identify favourable moneylines. Bets can then be placed based on the spread between the offered and estimated fair return rates, and on the estimated odds of winning said bet. Different contour plots were produced in order to visualise the mean, standard deviation and Sharpe ratio of the returns under constrained betting strategies, as well as the proportion of matches satisfying the constrains. Constrains eliminating more than 90% of the matches were discarded from our domain.
 
-![](https://i.imgur.com/kIhRAZH.png)
-
-The first part of the integral denotes the true positive rate given the value of the estimator **g(x)** multiplied by the return offered, over the domain where **g(x)** > **h(x)**. The second part is analogous to the first one, but betting on the predicted losing team when **g(x)** < **h(x)**, hence why the true negative is used instead.
-
-
+![](https://i.imgur.com/4lb7Mks.png)
+![](https://i.imgur.com/8t8frVt.png)
+![](https://i.imgur.com/1hlxw1O.png)
+![](https://i.imgur.com/pdxJ3j0.png)
 
 
 
