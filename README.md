@@ -119,10 +119,22 @@ More careful strategies produce higher Sharpe ratio, at the expense of having le
 
 ![](https://i.imgur.com/mrmU9Fp.png)
 
+We will retain φ = 0.01202405 as our minimum spread, and ψ = 0.6312625 as our minimum estimated odds of winning throughout the remainder of this text. They are the pair of values that maximises the Sharpe Ratio under the sole constraint that no more than 35% of betting opportunities be discarted as too risky.
+
 ## Distribution of the returns
 
-Under our estimator p̂(x), we have:
-![](https://i.imgur.com/osPfz6b.png)
+Under our estimator p̂(**X**), alongside the moneyline offered returns r(**X**), we derive the following distribution for the cummulative returns after **n** bets:
+
+![](https://i.imgur.com/RAK7XTy.png)
+
+An estimator for the parameter **p** of the binomial distribution above can be derived via:
+
+![](https://i.imgur.com/mfQfvDE.png)
+
+By setting ψ = 0 and φ = 0, the AUROC of the bets came out at 0.7636. By denoting said AUROC as A, we can use the following test to rank the performance of the total returns given **n**:
+
+![](https://i.imgur.com/KCKMrMw.png)
+
 
 
 
