@@ -129,11 +129,11 @@ Under our estimator p̂(**X**), alongside the moneyline offered returns r(**X**)
 
 An estimator for the parameter **p** of the binomial distribution above can be derived via:
 
-![](https://i.imgur.com/mfQfvDE.png)
+<p align="center"> <img src="https://i.imgur.com/mfQfvDE.png"> </p>
 
 By setting ψ = 0 and φ = 0, the AUROC of the bets came out at 0.7636. By denoting said AUROC as A, we can use the following test to rank the performance of the total returns given **n**:
 
-![](https://i.imgur.com/KCKMrMw.png)
+<p align="center"> <img src="https://i.imgur.com/KCKMrMw.png"> </p>
 
 
 
