@@ -125,7 +125,7 @@ We will retain φ = 0.01202405 as our minimum spread, and ψ = 0.6312625 as our 
 
 Under our estimator p̂(**X**), alongside the moneyline offered returns r(**X**), we derive the following distribution for the cummulative returns after **n** bets:
 
-<p align="center"> ![](https://i.imgur.com/RAK7XTy.png) </p>
+<p align="center"> <img src="https://i.imgur.com/RAK7XTy.png"> </p>
 
 An estimator for the parameter **p** of the binomial distribution above can be derived via:
 
