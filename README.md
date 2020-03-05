@@ -131,7 +131,7 @@ An estimator for the parameter **p** of the binomial distribution above can be d
 
 <p align="center"> <img src="https://i.imgur.com/mfQfvDE.png"> </p>
 
-By setting ψ = 0 and φ = 0, the AUROC of the bets came out at 0.7636. By denoting said AUROC as A, we can use the following test to rank the performance of the total returns given **n**:
+By setting ψ = 0 and φ = 0, the AUROC of the bets came out at 0.7636. By denoting said AUROC as A, we have:
 
 <p align="center"> <img src="https://i.imgur.com/KCKMrMw.png"> </p>
 
