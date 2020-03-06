@@ -119,29 +119,7 @@ More careful strategies produce higher Sharpe ratio, at the expense of having le
 
 ![](https://i.imgur.com/mrmU9Fp.png)
 
-We will retain φ = 0.01202405 as our minimum spread, and ψ = 0.6312625 as our minimum estimated odds of winning throughout the remainder of this text. They are the pair of values that maximises the Sharpe Ratio under the sole constraint that no more than 35% of betting opportunities be discarted as too risky.
 
-## Distribution of the returns
-
-Under our estimator p̂(**X**), alongside the moneyline offered returns r(**X**), we derive the following distribution for the cummulative returns after **n** bets:
-
-<p align="center"> <img src="https://i.imgur.com/RAK7XTy.png"> </p>
-
-An estimator for the parameter **p** of the binomial distribution above can be derived by letting ψ follow a uniform distribution on [0,1], then by noting that:
-
-<p align="center"> <img src="https://i.imgur.com/mfQfvDE.png"> </p>
-
-The computed AUROC of the bets came out at 0.7636. We denote it as A, and drop the binomial distribution for its Gaussian approximation:
-
-<p align="center"> <img src="https://i.imgur.com/x1GoUFA.png"> </p>
-
-The second term is the random variable π(n) multiplied by the mean return on a bet, minus the incured cost of betting **n** times. This can serve as an estimate of the profits made after **n** bets. 
-
-By setting **n** = 2430, we can obtain a 0.95% confidence interval for the estimated profits per dollar by betting based on P(odds_winning >= ψ ~ U[0,1] ), that is, a series of bets made by someone who has a completely random risk tolerance function. Said CI will be overly pessimistic for someone who sets ψ high, and overly optimistic for someone who sets ψ low.
-
-![](https://i.imgur.com/Qld9NAm.png)
-
-And under our tresholds φ = 0.01202405, ψ = 0.6312625, we obtain the following theoritical profits on the dollar: 0.5680784. The standard deviation of our returns is 0.8274798, whereas the estimator given by **μ sqrt{A(A-1)}** comes out at 0.8667367. 
 
 # Deployment
 
