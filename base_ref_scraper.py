@@ -31,8 +31,6 @@ chrome_options.add_argument("--headless")
 driver = webdriver.Chrome(r"C:\bin\chromedriver_win32\chromedriver.exe", options=chrome_options)
 driver.create_options()
 
-frm = datetime(2007, 4, 1).date()
-to = datetime(2019, 10, 27).date()
 
 
 
